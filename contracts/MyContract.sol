@@ -30,15 +30,6 @@ contract MyContract {
         // How to get the Ether back, send to this contract?
         donations[msg.sender] += msg.value;
     }
-    
-    function depositEther(bytes32 _id) public payable {
-
-        // Events are emitted using 'emit', followed
-        // by the name of the event and the arguments (if any)
-        // in parentheses. Any usch invovocation can be detected from the 
-        // the JS API by filtering for 'Deposit'
-        emit Deposit(msg.sender, _id, msg.value);
-    }
 
     /** 
     @dev Callculates a rectangle's surface and perimeter
@@ -54,6 +45,23 @@ contract MyContract {
         
         return (w * h, 2 * (w + h));
     }  
+    
+    function getDataFromAnotherContract() 
+    public 
+    view 
+    returns (uint) {
+        
+        return anotherContract.data();
+    }
+
+    function depositEther(bytes32 _id) public payable {
+
+        // Events are emitted using 'emit', followed
+        // by the name of the event and the arguments (if any)
+        // in parentheses. Any usch invovocation can be detected from the 
+        // the JS API by filtering for 'Deposit'
+        emit Deposit(msg.sender, _id, msg.value);
+    }
 
     function taker(uint _a, uint _b) public {
     
