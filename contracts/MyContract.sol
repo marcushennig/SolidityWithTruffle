@@ -1,9 +1,6 @@
 pragma solidity ^0.5.0;
 
-
-contract AnotherContract {
-    uint public data = 42;
-}
+import "./AnotherContract.sol";
 
 
 /** @title Test contract */
@@ -34,7 +31,6 @@ contract MyContract {
         donations[msg.sender] += msg.value;
     }
     
-
     function depositEther(bytes32 _id) public payable {
 
         // Events are emitted using 'emit', followed
