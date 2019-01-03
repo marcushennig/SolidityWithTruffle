@@ -1,13 +1,26 @@
 pragma solidity ^0.5.0;
 
 
+contract AnotherContract {
+    uint public data = 42;
+}
+
+
 /** @title Test contract */
-contract Test {
+contract MyContract {
 
     /** State variable */
     uint public storedData;
     uint private sum;
     mapping (address => uint) private donations;
+    
+    event Deposit(
+        address indexed _from, 
+        bytes32 indexed _id, 
+        uint _value
+    );
+
+    AnotherContract public anotherContract = new AnotherContract();
     
     /**
     @dev This function is executed whenever 
@@ -21,6 +34,16 @@ contract Test {
         donations[msg.sender] += msg.value;
     }
     
+
+    function depositEther(bytes32 _id) public payable {
+
+        // Events are emitted using 'emit', followed
+        // by the name of the event and the arguments (if any)
+        // in parentheses. Any usch invovocation can be detected from the 
+        // the JS API by filtering for 'Deposit'
+        emit Deposit(msg.sender, _id, msg.value);
+    }
+
     /** 
     @dev Callculates a rectangle's surface and perimeter
     @param w Width of the retangle
