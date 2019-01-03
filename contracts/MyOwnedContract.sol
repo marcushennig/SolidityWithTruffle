@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
-import "./Modifiers/Owned.sol";
-import "./Modifiers/Priced.sol";
+import "./base-contracts/Owned.sol";
+import "./base-contracts/Priced.sol";
 
 
 contract MyOWnedContract is Owned, Priced {
