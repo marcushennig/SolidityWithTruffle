@@ -8,7 +8,7 @@ Install the following tools
 - [Truffle](https://truffleframework.com/truffle)
 - [Ganache](https://truffleframework.com/ganache)
 
-Furthermore get the following plugins for VS Code:
+Furthermore get the following [plugins](https://truffleframework.com/tutorials/configuring-visual-studio-code) for VS Code:
 
 - [Solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity)
 - [Solidity Extended](https://marketplace.visualstudio.com/items?itemName=beaugunderson.solidity-extended)
