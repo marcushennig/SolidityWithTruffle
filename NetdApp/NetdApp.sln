@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetdApp", "NetdApp\NetdApp.csproj", "{42522470-AAC4-41CB-981D-BF0D9BCBE647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestToken", "UnitTestToken\UnitTestToken.csproj", "{3099BA81-D06C-4F5C-95CF-9B0DD9E4FDCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42522470-AAC4-41CB-981D-BF0D9BCBE647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42522470-AAC4-41CB-981D-BF0D9BCBE647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42522470-AAC4-41CB-981D-BF0D9BCBE647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42522470-AAC4-41CB-981D-BF0D9BCBE647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3099BA81-D06C-4F5C-95CF-9B0DD9E4FDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3099BA81-D06C-4F5C-95CF-9B0DD9E4FDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3099BA81-D06C-4F5C-95CF-9B0DD9E4FDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3099BA81-D06C-4F5C-95CF-9B0DD9E4FDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
