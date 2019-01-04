@@ -29,7 +29,7 @@ library ERC20Lib {
 
         self.balances[msg.sender] = self.balances[msg.sender].minus(_value);
         self.balances[_to] = self.balances[_to].plus(_value);
-
+        
         emit Transfer(msg.sender, _to, _value);
 
         success = true;

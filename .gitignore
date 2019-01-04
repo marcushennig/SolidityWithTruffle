@@ -5,3 +5,8 @@
 /ERC20/node_modules
 /Debugger/node_modules
 /SecurityToken/node_modules
+/NetdApp/UnitTestToken/obj
+/NetdApp/UnitTestToken/bin
+/NetdApp/.idea
+/NetdApp/NetdApp/bin
+/NetdApp/NetdApp/obj
