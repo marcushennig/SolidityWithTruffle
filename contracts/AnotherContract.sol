@@ -5,5 +5,4 @@ contract AnotherContract {
     
     uint public data = 42;
 
-    
 }
