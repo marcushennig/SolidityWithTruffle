@@ -2,7 +2,7 @@
 using Nethereum.HdWallet;
 using System.Numerics;
 using System.Threading.Tasks;
-using NetdApp.Contract;
+using NetdApp.Token.Service;
 using Nethereum.Web3;
 
 namespace NetdApp
@@ -35,6 +35,8 @@ namespace NetdApp
 
         #endregion Parameters
         
+        #region Methods
+        
         /// <summary>
         /// Test Web3 interface
         /// </summary>
@@ -51,48 +53,21 @@ namespace NetdApp
             }
         }
         
-        /// <summary>
-        /// Call simple function of contract 
-        /// </summary>
-        /// <returns></returns>
-        private static async Task TestBalanceOf()
+        #endregion Methods
+
+        private static async Task TestTokenService()
         {
             var account = Wallet.GetAccount(0);
             var web3 = new Web3(account, Url);
+            var token = new TokenService(web3, ContractAddress);
             
-            var balanceOfFunctionMessage = new BalanceOfFunction
-            {
-                Who = account.Address
-            };
-            var balanceHandler = web3.Eth.GetContractQueryHandler<BalanceOfFunction>();
-            var balance = await balanceHandler.QueryAsync<BigInteger>(ContractAddress, balanceOfFunctionMessage);
-
-            Console.WriteLine($"Balance[{account.Address}]: {balance} tokens");
-        }
-
-        /// <summary>
-        /// Test transfer transaction
-        /// </summary>
-        /// <returns></returns>
-        private static async Task TestTransfer()
-        {
-            var account = Wallet.GetAccount(0);
-            var web3 = new Web3(account, Url);
-
-            var receiverAddress = Wallet.GetAccount(1).Address;
-            var transferHandler = web3.Eth.GetContractTransactionHandler<TransferFunction>();
-            var transfer = new TransferFunction
-            {
-                To = receiverAddress,
-                Value = 1
-            };
-            var transactionReceipt = await transferHandler.SendRequestAndWaitForReceiptAsync(ContractAddress, transfer);
-            
+            var symbol = await token.SymbolQueryAsync();
+            Console.WriteLine(symbol);
         }
 
         static async Task Main(string[] args)
         {
-            await TestTransfer();
+            await TestTokenService();
         }
     }
 }
